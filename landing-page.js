@@ -22,11 +22,11 @@ let isDragging = false;
 let scrollFadeTimeout;
 let initialOrder = []; // Var to store order of Categories in the selection bank
 
-const pageRedirects = { //Redirections to different sections for categorySelect
-    "Engineer": "projects.html#engineering-page",
-    "Designer": "projects.html#design-page",
-    "Photographer": "projects.html#photography-page",
-    "Programmer": "projects.html#programming-page"
+const pageRedirects = { //All categories go to projects page
+    "Engineer": "projects.html",
+    "Designer": "projects.html",
+    "Developer": "projects.html",
+    "Websites": "projects.html"
 };
 
 
