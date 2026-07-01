@@ -127,6 +127,13 @@ window.addEventListener("DOMContentLoaded", (event) => { //Inital Conditions for
     document.body.classList.add('no-scroll'); //Prevent Scroll for inital animation
     setInitialState();
 
+    // === Touch Device Detection & Mobile-Only Changes ===
+    const isTouchDevice = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0) || (window.innerWidth < 1024);
+
+    if (isTouchDevice && placeholderElement) {
+        placeholderElement.textContent = 'Tap Button';
+    }
+
     setTimeout(() => {
         window.scrollTo(0, 0);
         animationsStarted = true;
@@ -149,6 +156,21 @@ window.addEventListener("DOMContentLoaded", (event) => { //Inital Conditions for
             item.addEventListener('touchcancel', handleTouchEnd);
             item.classList.add('touch-draggable');
             initialOrder.push(item.id);
+
+            // === Tap to Navigate on Touch Devices ===
+            if (isTouchDevice) {
+                item.addEventListener('click', function(e) {
+                    const redirectUrl = pageRedirects[item.id];
+                    if (redirectUrl) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        document.body.classList.add('fade-out');
+                        setTimeout(() => {
+                            window.location.href = redirectUrl;
+                        }, 500);
+                    }
+                });
+            }
         });
 
         categorySelectElement.addEventListener('dragover', handleDragOver);
