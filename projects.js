@@ -15,9 +15,11 @@ const portraitContainer = document.getElementById('portrait-gallery');
 const portraitShortContainer = document.getElementById('portrait-short-gallery');
 
 function renderGallery() {
-  landscapeContainer.innerHTML = '';
-  portraitContainer.innerHTML = '';
-  portraitShortContainer.innerHTML = '';
+  if (!landscapeContainer && !portraitContainer && !portraitShortContainer) return;
+
+  if (landscapeContainer) landscapeContainer.innerHTML = '';
+  if (portraitContainer) portraitContainer.innerHTML = '';
+  if (portraitShortContainer) portraitShortContainer.innerHTML = '';
 
   photos.forEach(photo => {
     const galleryItemHTML = createGalleryItemHTML(photo);
@@ -32,9 +34,9 @@ function renderGallery() {
 
 
   const columns = getColumnCount();
-  addPlaceholders(landscapeContainer, columns);
-  addPlaceholders(portraitContainer, columns);
-  addPlaceholders(portraitShortContainer, columns);
+  if (landscapeContainer) addPlaceholders(landscapeContainer, columns);
+  if (portraitContainer) addPlaceholders(portraitContainer, columns);
+  if (portraitShortContainer) addPlaceholders(portraitShortContainer, columns);
 }
 
 function createGalleryItemHTML(photo) {
