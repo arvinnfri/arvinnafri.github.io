@@ -1521,32 +1521,49 @@ form textarea {
   }
 
   /* === Mobile Drag & Drop Fixes === */
+  .job-role-container {
+    flex-direction: column !important;
+    top: calc(45vh - 6rem) !important;
+    gap: 0.5rem;
+  }
+
   .categorySelect {
-    scale: 1;
-    left: 50%;
-    right: auto;
-    transform: translateX(-50%);
-    flex-wrap: wrap;
-    max-width: 92vw;
-    gap: 0.25rem;
-    padding: 0.5rem 0.75rem;
-    font-size: 0.85rem;
-    top: auto;
-    bottom: 2rem;
+    left: 50% !important;
+    right: auto !important;
+    transform: translateX(-50%) !important;
+    flex-direction: column !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    justify-content: center !important;
+    max-width: 85vw;
+    gap: 0.5rem;
+    padding: 0.8rem 1.2rem;
+    font-size: 1.2rem !important;
+    scale: 1 !important;
+    top: calc(45vh + 1rem) !important;
+    bottom: auto !important;
   }
 
   .categorySelect.scrolled {
-    scale: 1;
-    left: 50%;
-    right: auto;
-    top: auto;
-    bottom: 2rem;
+    left: 50% !important;
+    right: auto !important;
+    transform: translateX(-50%) !important;
+    flex-direction: column !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    justify-content: center !important;
+    scale: 1 !important;
+    font-size: 1.2rem !important;
+    padding: 0.8rem 1.2rem;
+    gap: 0.5rem;
+    top: calc(45vh + 1rem) !important;
+    bottom: auto !important;
   }
 
   .categorySelect span[draggable="true"],
   .categorySelect span.touch-draggable {
-    padding: 0.4em 0.6em;
-    font-size: 0.8rem;
+    padding: 0.6em 0.9em;
+    font-size: 1.15rem;
   }
 
   #category-drop-zone {
@@ -1602,11 +1619,19 @@ form textarea {
 
   /* === Small Mobile Drag & Drop === */
   .categorySelect {
-    max-width: 95vw;
-    gap: 0.15rem;
-    padding: 0.4rem 0.5rem;
-    bottom: 1.5rem;
-    font-size: 0.7rem;
+    max-width: 90vw;
+    gap: 0.25rem;
+    padding: 0.5rem 0.75rem;
+    right: 0.5rem;
+    top: calc(45vh + 3rem);
+    bottom: auto;
+    font-size: 0.85rem;
+  }
+
+  .categorySelect span[draggable="true"],
+  .categorySelect span.touch-draggable {
+    padding: 0.35em 0.55em;
+    font-size: 0.8rem;
   }
 
   .categorySelect span[draggable="true"],
