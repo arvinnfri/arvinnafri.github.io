@@ -26,7 +26,7 @@ const pageRedirects = { //All categories go to projects page
     "Engineer": "projects.html",
     "Designer": "projects.html",
     "Developer": "projects.html",
-    "Websites": "projects.html"
+    "Programmer": "projects.html"
 };
 
 
