@@ -65,6 +65,19 @@
       color: #fff;
     }
 
+    /* Push Websites arrows outward */
+    .carousel-container.outer-arrows {
+      padding: 0;
+    }
+    .carousel-container.outer-arrows .carousel-prev {
+      margin-right: -8px;
+      z-index: 3;
+    }
+    .carousel-container.outer-arrows .carousel-next {
+      margin-left: -8px;
+      z-index: 3;
+    }
+
     @media (max-width: 600px) {
       .carousel-list .project-card {
         flex: 0 0 300px;
@@ -180,7 +193,7 @@
   <details id="websites-page">
     <summary class="section-title project-section">Websites</summary>
     <div class="project-section-content">
-      <div class="carousel-container">
+      <div class="carousel-container outer-arrows">
         <button class="carousel-arrow carousel-prev" aria-label="Scroll left">&#10094;</button>
         <div class="carousel-track">
         <ul class="project-list carousel-list">
