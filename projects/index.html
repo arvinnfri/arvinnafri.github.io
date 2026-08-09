@@ -11,6 +11,75 @@
   <link rel="stylesheet" href="https://use.typekit.net/nnb5nol.css">
   <link rel="icon" type="image/x-icon" href="../Assets/favicon.ico">
   <link rel="stylesheet" href="../style.css" />
+  <style>
+    /* ===== Project Carousel ===== */
+    .carousel-container {
+      position: relative;
+      display: flex;
+      align-items: center;
+      padding: 0 1rem;
+    }
+
+    .carousel-track {
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      width: 100%;
+      padding: 0.5rem 0;
+    }
+    .carousel-track::-webkit-scrollbar { display: none; }
+
+    .carousel-list {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: nowrap;
+      padding: 0;
+    }
+
+    .carousel-list .project-card {
+      flex: 0 0 320px;
+      min-width: 280px;
+      max-width: 380px;
+    }
+
+    .carousel-arrow {
+      flex-shrink: 0;
+      width: 44px;
+      height: 44px;
+      border: 2px solid var(--color-black);
+      border-radius: 50%;
+      background: #fff;
+      font-size: 1.3rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2;
+      transition: all 0.2s;
+      color: var(--color-black);
+    }
+    .carousel-arrow:hover {
+      background: var(--color-primary);
+      border-color: var(--color-primary);
+      color: #fff;
+    }
+
+    @media (max-width: 600px) {
+      .carousel-list .project-card {
+        flex: 0 0 260px;
+        min-width: 240px;
+      }
+      .carousel-container {
+        padding: 0 0.25rem;
+      }
+      .carousel-arrow {
+        width: 34px;
+        height: 34px;
+        font-size: 1rem;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -70,8 +139,10 @@
   <details id="applications-page">
     <summary class="section-title project-section">Applications</summary>
     <div class="project-section-content">
-      <div class="container">
-        <ul class="project-list">
+      <div class="carousel-container">
+        <button class="carousel-arrow carousel-prev" aria-label="Scroll left">&#10094;</button>
+        <div class="carousel-track">
+        <ul class="project-list carousel-list">
           <li class="project-card">
             <div class="project-image">
               <img src="../Assets/KACell.PNG" alt="KACell Warehouse Management Application" />
@@ -90,7 +161,18 @@
               <p>An enterprise employee evaluation automation platform built with strict organizational hierarchy compliance. Features multi-level review workflows, structured performance metrics, and generates accurate Excel-based reports. Designed to streamline appraisal processes while maintaining chain-of-command integrity across all departments.</p>
             </div>
           </li>
+          <li class="project-card">
+            <div class="project-image">
+              <img src="../Assets/malekyar.PNG" alt="MalekYar Real Estate Management" />
+            </div>
+            <div class="project-info">
+              <h3>MalekYar</h3>
+              <p>A comprehensive real estate management application designed for property owners to organize and categorize all property and land files. Features a full management panel with dashboards for daily task tracking, to-do lists, and advanced document categorization for streamlined property portfolio management.</p>
+            </div>
+          </li>
         </ul>
+        </div>
+        <button class="carousel-arrow carousel-next" aria-label="Scroll right">&#10095;</button>
       </div>
     </div>
   </details>
@@ -98,19 +180,17 @@
   <details id="websites-page">
     <summary class="section-title project-section">Websites</summary>
     <div class="project-section-content">
-      <div class="container">
-        <ul class="project-list">
+      <div class="carousel-container">
+        <button class="carousel-arrow carousel-prev" aria-label="Scroll left">&#10094;</button>
+        <div class="carousel-track">
+        <ul class="project-list carousel-list">
           <li class="project-card">
             <div class="project-image">
               <img src="../Assets/WebsiteLandingPageScreenshot.svg" alt="Portfolio Project" />
             </div>
             <div class="project-info">
               <h3>Portfolioslop</h3>
-              <p>Personal portfolio website that showcases my various projects and interests (You're viewing this
-                project
-                right now!)</p>
-              <a href="https://arvinnafari.ir/" class="project-link" target="_blank"
-                rel="noopener noreferrer">Read More</a>
+              <p>Personal portfolio website that showcases my various projects and interests (You're viewing this project right now!)</p>
             </div>
           </li>
           <li class="project-card">
@@ -120,11 +200,47 @@
             <div class="project-info">
               <h3>Vexcode AI</h3>
               <p>An AI-powered assistant designed to empower users through precise data analysis and robust code generation. Built with a core focus on intelligent data interpretation, advanced programming capabilities, and seamless user interaction to simplify complex technical tasks for everyday people.</p>
-              <a href="https://vexcode.ir/" class="project-link" target="_blank"
-                rel="noopener noreferrer">Read More</a>
+            </div>
+          </li>
+          <li class="project-card">
+            <div class="project-image">
+              <img src="../Assets/iran-weather.PNG" alt="Iran Weather 3D Map" />
+            </div>
+            <div class="project-info">
+              <h3>Iran Weather 3D</h3>
+              <p>An interactive 3D geographical weather platform displaying real-time weather data for every province in Iran. Features a fully rotatable 3D map with selectable cities, dynamic weather overlays, and province-specific forecasts rendered in an immersive three-dimensional environment.</p>
+            </div>
+          </li>
+          <li class="project-card">
+            <div class="project-image">
+              <img src="../Assets/cloudy-dashboard.PNG" alt="Cloudy Roleplay Dashboard" />
+            </div>
+            <div class="project-info">
+              <h3>Cloudy Dashboard</h3>
+              <p>A comprehensive player management dashboard for the Cloudy Roleplay server with direct database connectivity. Features a full player information retrieval system, password change functionality, and seamless forum integration — all within a unified admin control panel.</p>
+            </div>
+          </li>
+          <li class="project-card">
+            <div class="project-image">
+              <img src="../Assets/sht-solar.PNG" alt="SHT Solar Store" />
+            </div>
+            <div class="project-info">
+              <h3>SHT Solar</h3>
+              <p>A solar-focused e-commerce platform with an advanced admin panel for managing products, articles, and contact form messages. Features a precision solar calculator tailored to user-specific needs and an AI-powered intelligent chatbot for real-time customer support and inquiries.</p>
+            </div>
+          </li>
+          <li class="project-card">
+            <div class="project-image">
+              <img src="../Assets/ura-collection.PNG" alt="URA Collection Store" />
+            </div>
+            <div class="project-info">
+              <h3>URA Collection</h3>
+              <p>A fully-featured e-commerce website with an advanced admin panel for product, article, and category management. Includes homepage story highlights, a complete user panel with shopping cart, integrated payment gateway, and a fully responsive UI built to modern web standards.</p>
             </div>
           </li>
         </ul>
+        </div>
+        <button class="carousel-arrow carousel-next" aria-label="Scroll right">&#10095;</button>
       </div>
     </div>
   </details>
@@ -173,6 +289,22 @@
   </script>
   <script type="module" src="../viewer3d.js"></script>
   <script type="module" src="../page-effects.js"></script>
+  <script>
+    // === Project Carousel Arrows ===
+    document.querySelectorAll('.carousel-container').forEach(container => {
+      const track = container.querySelector('.carousel-track');
+      const prevBtn = container.querySelector('.carousel-prev');
+      const nextBtn = container.querySelector('.carousel-next');
+      if (!track || !prevBtn || !nextBtn) return;
+
+      nextBtn.addEventListener('click', () => {
+        track.scrollBy({ left: 340, behavior: 'smooth' });
+      });
+      prevBtn.addEventListener('click', () => {
+        track.scrollBy({ left: -340, behavior: 'smooth' });
+      });
+    });
+  </script>
 </body>
 
 </html>
