@@ -39,19 +39,13 @@
     }
 
     .contact-card .avatar {
-      width: 80px;
-      height: 80px;
+      width: 90px;
+      height: 90px;
       border-radius: 50%;
-      background: var(--color-primary);
-      color: #fff;
-      font-size: 2rem;
-      font-weight: 800;
-      font-family: var(--font-secondary);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      object-fit: cover;
+      border: 3px solid var(--color-primary);
       margin: 0 auto 1.5rem;
-      letter-spacing: 1px;
+      display: block;
     }
 
     .contact-card h2 {
@@ -188,7 +182,7 @@
 
   <div class="contact-card-wrapper">
     <div class="contact-card">
-      <div class="avatar">AN</div>
+      <img class="avatar" src="../Assets/irlHeadshot.png" alt="Arvin Nafari">
       <h2>Arvin Nafari</h2>
       <p class="role-tag">Engineer &bull; Developer &bull; Designer</p>
 
